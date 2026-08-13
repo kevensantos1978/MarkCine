@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>MarkCine</title>
 
     <link rel="stylesheet" href="style.css">
@@ -11,58 +10,177 @@
 
 <body>
 
-    <header>
-        <h1>🎬 MarkCine</h1>
+    <header class="topo">
+        <div class="logo">
+            <span>🎬</span> MarkCine
+        </div>
 
         <nav>
-            <a href="#">Início</a>
-            <a href="#">Filmes</a>
-            <a href="#">Séries</a>
-            <a href="#">Minha Lista</a>
+            <a href="#inicio">Início</a>
+            <a href="#filmes">Filmes</a>
+            <a href="#series">Séries</a>
+            <a href="#favoritos">Favoritos</a>
         </nav>
 
-        <input
-            type="text"
-            id="pesquisa"
-            placeholder="Pesquisar filmes..."
-        >
+        <button class="login">Entrar</button>
     </header>
 
-    <main>
 
-        <section class="hero">
-            <div>
-                <h2>Bem-vindo ao MarkCine</h2>
+    <main id="inicio">
+
+        <section class="banner">
+            <div class="banner-conteudo">
+                <span class="destaque">EM DESTAQUE</span>
+
+                <h1>Bem-vindo ao MarkCine</h1>
 
                 <p>
                     Encontre filmes e séries para assistir.
+                    Explore novos títulos e monte sua lista de favoritos.
                 </p>
 
-                <button>Explorar agora</button>
+                <div class="botoes">
+                    <button onclick="assistir()">▶ Assistir</button>
+                    <button class="info" onclick="mostrarInfo()">ⓘ Mais informações</button>
+                </div>
             </div>
         </section>
 
-        <section>
-            <h2>🔥 Filmes em destaque</h2>
 
-            <div id="filmes" class="catalogo">
+        <section class="conteudo" id="filmes">
 
-                <div class="filme">
-                <div class="poster">
-    <img src="img/filme1.jpg" alt="Filme 1">
-</div>
+            <div class="titulo-secao">
+                <h2>🔥 Filmes em destaque</h2>
 
-  <div class="poster">
-    <img src="img/filme2.jpg" alt="Filme 2">
-</div>
- 
-<div class="poster">
-    <img src="img/filme3.jpg" alt="Filme 3">
-</div>
+                <input
+                    type="text"
+                    id="pesquisa"
+                    placeholder="🔍 Pesquisar filmes..."
+                    onkeyup="pesquisarFilmes()"
+                >
             </div>
+
+
+            <div class="filmes" id="listaFilmes">
+
+                <div class="filme" data-nome="Aventura">
+                    <div class="capa capa1">
+                        <span>⚔️</span>
+                    </div>
+                    <h3>Aventura</h3>
+                    <p>Filme • 2026</p>
+                    <button onclick="assistirFilme('Aventura')">
+                        ▶ Assistir
+                    </button>
+                </div>
+
+
+                <div class="filme" data-nome="O Último Herói">
+                    <div class="capa capa2">
+                        <span>🦸</span>
+                    </div>
+                    <h3>O Último Herói</h3>
+                    <p>Filme • 2026</p>
+                    <button onclick="assistirFilme('O Último Herói')">
+                        ▶ Assistir
+                    </button>
+                </div>
+
+
+                <div class="filme" data-nome="Cidade Sombria">
+                    <div class="capa capa3">
+                        <span>🌃</span>
+                    </div>
+                    <h3>Cidade Sombria</h3>
+                    <p>Filme • 2026</p>
+                    <button onclick="assistirFilme('Cidade Sombria')">
+                        ▶ Assistir
+                    </button>
+                </div>
+
+
+                <div class="filme" data-nome="Galáxia">
+                    <div class="capa capa4">
+                        <span>🚀</span>
+                    </div>
+                    <h3>Galáxia</h3>
+                    <p>Filme • 2026</p>
+                    <button onclick="assistirFilme('Galáxia')">
+                        ▶ Assistir
+                    </button>
+                </div>
+
+
+                <div class="filme" data-nome="Mistério">
+                    <div class="capa capa5">
+                        <span>🕵️</span>
+                    </div>
+                    <h3>Mistério</h3>
+                    <p>Filme • 2026</p>
+                    <button onclick="assistirFilme('Mistério')">
+                        ▶ Assistir
+                    </button>
+                </div>
+
+
+                <div class="filme" data-nome="Terror">
+                    <div class="capa capa6">
+                        <span>👻</span>
+                    </div>
+                    <h3>Terror</h3>
+                    <p>Filme • 2026</p>
+                    <button onclick="assistirFilme('Terror')">
+                        ▶ Assistir
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section class="series" id="series">
+
+            <h2>📺 Séries populares</h2>
+
+            <div class="series-grid">
+
+                <div class="serie">
+                    <div class="serie-capa">🔥</div>
+                    <h3>Nova Geração</h3>
+                    <p>Temporada 1</p>
+                </div>
+
+                <div class="serie">
+                    <div class="serie-capa">🌎</div>
+                    <h3>Mundo Perdido</h3>
+                    <p>Temporada 2</p>
+                </div>
+
+                <div class="serie">
+                    <div class="serie-capa">🧟</div>
+                    <h3>Sobreviventes</h3>
+                    <p>Temporada 3</p>
+                </div>
+
+                <div class="serie">
+                    <div class="serie-capa">🚔</div>
+                    <h3>Operação</h3>
+                    <p>Temporada 1</p>
+                </div>
+
+            </div>
+
         </section>
 
     </main>
+
+
+    <footer>
+        <h2>🎬 MarkCine</h2>
+        <p>Seu aplicativo de filmes e séries.</p>
+        <p>© 2026 MarkCine</p>
+    </footer>
+
 
     <script src="script.js"></script>
 
